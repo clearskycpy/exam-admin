@@ -62,6 +62,7 @@ public class ExamServiceImpl extends ServiceImpl<ExamMapper, Exam> implements Ex
         if (examQueryVo.getEndTime() != null) {
             wrapper.lt("end_time", examQueryVo.getEndTime().substring(0, examQueryVo.getEndTime().indexOf("T")));
         }
+        wrapper.orderByAsc("start_time");
         IPage<Exam> page = examMapper.selectPage(new Page<>(examQueryVo.getPageNo(), examQueryVo.getPageSize()), wrapper);
 
         return PageResponse.<Exam>builder().data(page.getRecords()).total(page.getTotal()).build();

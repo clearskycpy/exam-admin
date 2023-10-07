@@ -13,13 +13,15 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
   redis:
-    host: localhost
+    host: 112.124.6.46
     port: 6379
+    password: 123456
+    database: 0
   datasource:
     username: root
-    password: root
-    url: jdbc:mysql://localhost:3306/exam_system?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 93965211
+    url: jdbc:mysql://112.124.6.46:3306/exam_system?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     #   数据源其他配置
     initialSize: 5
